@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
 
 	<title>
 		Pedagog: Learn advanced courses online
@@ -151,12 +152,12 @@ td {
 		</tr>
 		<tr>
 			<td width="50%" class="social">
-			             <a id="fbloginbtn" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">
+			             <a id="fbloginbtn" href="#">
 		                    	<div class="btn" id="fbloginbtn">Login with Facebook</div></a>
 		    </td>
 		    <td width="50%" class="social">
 
-		                    <a id="gploginbtn" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">
+		                    <a id="gploginbtn" href="#">
 		                    	<div class="btn" id="gploginbtn">Login with Google</div></a>
 		    </td>
 		</tr>
