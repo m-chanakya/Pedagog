@@ -1,0 +1,56 @@
+@font-face {
+		src: url('../fonts/myriadl.otf');
+		font-family: myriadl;
+	}
+	@font-face {
+		src: url('../fonts/lane.ttf');
+		font-family: lane;
+	}
+	@font-face {
+		src: url('../fonts/museo/100.otf');
+		font-family: museo;
+		font-weight: 100;
+		font-style: normal;
+	}
+	@font-face {
+		src: url('../fonts/museo/300.otf');
+		font-family: museo;
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face {
+		src: url('../fonts/museo/500.otf');
+		font-family: museo;
+		font-weight: 500;
+		font-style: normal;
+	}
+	@font-face {
+		src: url('../fonts/museo/700.otf');
+		font-family: museo;
+		font-weight: 700;
+		font-style: normal;
+	}
+	@font-face {
+		src: url('../fonts/museo/900.otf');
+		font-family: museo;
+		font-weight: 900;
+		font-style: normal;
+	}
+	@font-face {
+		src: url('../fonts/museo/300i.otf');
+		font-family: museo;
+		font-weight: 300;
+		font-style: italic;
+	}
+	@font-face {
+		src: url('../fonts/museo/100i.otf');
+		font-family: museo;
+		font-weight: 100;
+		font-style: italic;
+	}
+	@font-face {
+		src: url('../fonts/museo/500i.otf');
+		font-family: museo;
+		font-weight: 500;
+		font-style: italic;
+	}
