@@ -42,7 +42,7 @@
 		#searchbox {
 			background-color: rgba(0,0,0,0.3);
 			float: right;
-			border-radius: 5px;
+			border-radius: 10px;
 			width: 20%;
 			padding-left: 10px;
 			color: rgba(255,255,255,0.7);
@@ -65,10 +65,54 @@
 		.fa {
 			display: inline-block;
 		}
+		.leftsidebar {
+			padding-top: 80px;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 20%;
+			background: #01579B;
+			height: 100%;
+			display: none;
+		}
+		.container {
+			margin-top: 100px;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		.container h1 {
+			font-size: 3em;
+			margin-bottom: 30px;
+			margin-top: 30px;
+			font-weight: 700;
+		}
+		.container h2 {
+			font-size: 2em;
+			margin-bottom: 20px;
+			margin-top: 20px;
+			font-weight: 700;
+		}
+		.container h3 {
+			font-size: 1.5em;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+		.container p {
+			font-size: 1.1em;
+			margin-bottom: 10px;
+			margin-top: 10px;
+			font-weight: 300;
+			line-height: 1.2em;
+			text-align: justify;
+			/*letter-spacing: 0px;*/
+		}
+		.container a {
+			color: #01579B;
+		}
 	</style>
 </head>
 <body>
-	<div class="header animated fadeIn clearfix">
+	<div class="header clearfix">
 		<a href="/"><div class="logo_hero"><h1>pedagog</h1></div></a>
 		<form action="search" id="searchbox">
 			<span class="fa fa-search"></span>
@@ -76,8 +120,17 @@
 		</form>
 	</div>
 	<div class="container">
+		<h1>Discussion Forum</h1>
+		<h2>Learning about learning</h2>
+		<h3>Third heading</h3>
+		<p>Checking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking this isChecking <a href="#">this</a> isChecking this isChecking this isChecking this isChecking this isChecking this is</p>
+		<h3>Third heading</h3>
 
 	</div>
+	<div class="leftsidebar animated slideInRight">
+		Hi
+	</div>
+	<!-- <div class="" -->
 </body>
 
 <script src="{% static 'js/jquery.js' %}"></script>
