@@ -9,21 +9,8 @@
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/fawesome.css' %}" />
 	<style>
-	
-		body, html {
-			font-family: museo;
-			-webkit-font-smoothing: antialiased;
-			  -moz-osx-font-smoothing: grayscale;
-		}
-
-		.anim {
-		  -o-transition:.2s;
-		  -ms-transition:.2s;
-		  -moz-transition:.2s;
-		  -webkit-transition:.2s;
-		  transition:.2s;
-		}
 		.header {
 			position: fixed;
 			top: 0px;
@@ -32,189 +19,75 @@
 			width: 100%;
 			padding-left: 10%;
 			padding-right: 10%;
-			padding-top: 20px;
-			padding-bottom: 20px;
-			height: 80px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			height: 60px;
 			box-sizing: border-box;
 			background: #01579B;
 
 		}
 		.logo_hero {
-			font-size: 2.5em;
+			font-size: 2em;
 			font-weight: 700;
 			color: white;
-			display: none;
 			float: left;
 		}
-		body {
+		.btn {
+			background-color: rgba(255,255,255,0.1);
+			border-radius: 10px;
 		}
-		#section1 {
-			color: white;
-			background: #01579B;
+		.btn:hover {
+			background-color: rgba(255,255,255,0.3);
 		}
-		.nav {
-			display: inline-block;	
-			color: white;
+		#searchbox {
+			background-color: rgba(0,0,0,0.3);
 			float: right;
-			/*margin-right: 20%;*/
-			/*margin: 0 auto;*/
-
+			border-radius: 5px;
+			width: 20%;
+			padding-left: 10px;
+			color: rgba(255,255,255,0.7);
 		}
-		.nav li {
-			list-style-type: none;
-			display: inline-block;
-			padding-left: 20px;
-			padding-right: 20px;
-			font-size: 0.9em;
-			font-weight: 700;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			color: rgba(255,255,255,0.8);
-		}
-		.nav li:hover {
+		#searchbar {
+			border: 0px;
+			background-color: transparent;
+			outline-width: 0px;
+			font-size: 1em;
+			font-family: museo;
+			padding-left: 5px;
 			color: white;
-			cursor: pointer;
+			padding-right: 10px;
+			padding-top: 5px;
+			width: 90%;
+			padding-bottom: 5px;
+			margin-left: 0px;
+			display: inline-block;
 		}
-
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.l-left {
-	float: left;
-}
-
-.l-right {
-	float: right;
-}
-.btn {
-	background-color: rgba(255,255,255,0.1);
-	border-radius: 10px;
-
-}
-.btn:hover {
-	background-color: rgba(255,255,255,0.3);
-}
-#logo_central {
-	font-size: 6em;
-	font-weight: 700;
-	display: block;
-	width: 100%;
-	text-align: center;
-	margin-bottom: 30px;
-}
-.subtext {
-	font-size: 1.5em;
-	font-weight: 700;
-	display: block;
-	width: 100%;
-	text-align: center;
-}
-#begin {
-	font-size: 0.6em;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	cursor: pointer;
-}
-a.norule {
-	color: white;
-	text-decoration: none;
-}
+		.fa {
+			display: inline-block;
+		}
 	</style>
 </head>
 <body>
 	<div class="header animated fadeIn clearfix">
-		<a href="#home"><div class="logo_hero"><h1>pedagog</h1></div></a>
-		<ul class="nav">
-			<a href="#what"><li class="anim">What</li></a>
-			<a href="#why"><li class="anim">Why</li></a>
-			<a href="#how"><li class="anim">How</li></a>
-			<a href="#courses"><li class="anim">Courses</li></a>
-			<a href="{% url 'login' %}"><li class="anim btn">Login</li></a>
-		</ul>
+		<a href="/"><div class="logo_hero"><h1>pedagog</h1></div></a>
+		<form action="search" id="searchbox">
+			<span class="fa fa-search"></span>
+			<input type="text" id="searchbar" />
+		</form>
 	</div>
-	<div id="fullPage">
-	<div class="section" id="section0">
-		Getting Started
-    </div>
-    <div class="section active" id="section1">
-    	<span id="logo_central" class="animated bounceIn">pedagog</span>
-    	<span class="subtext animated fadeIn">Learning. Made easier. <br /> <br /><br /><br /> 
-    	<a class="norule" href="#signup"><span class="anim btn" id="begin">Get started</span></a></span>
-    </div>
-    <div class="section" id="section2">
-		What
-    </div>
-    <div class="section" id="section3">
-		Why
-    </div>
-    <div class="section" id="section4">
-		How
-    </div>
-    <div class="section" id="section5">
-		Courses
-    </div>
-</div>
+	<div class="container">
 
+	</div>
 </body>
 
 <script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/fullpage.js' %}"></script>
+<script src="{% static 'js/endpoints.js' %}"></script>
 <!-- <script src="./js/jqueryui.js"></script> -->
 
 <script>
 $(document).ready(function() {
-		 // variables
-		  // var $header_top = $('.header');
 
-		$('#fullPage').fullpage({
-		    slideSelector: '.horizontal-scrolling',
-		    controlArrows: false, 
-		    scrollBar: true, 
-		    slidesNavigation: true,
-		    anchors: ['signup', 'home', 'what', 'why', 'how', 'courses'],
-
-		    afterLoad: function(anchorLink, index) {
-		      window.lastSlideLoaded = index;
-		      if (index == 2) {
-		      	$('.logo_hero').fadeOut();
-		      }
-		      else {
-		      	$('.logo_hero').fadeIn();
-		      }
-		    },
-
-		    onLeave: function(index, nextIndex, direction) {
-		      if(index == 5) {
-		        // $('#fp-nav').show();
-		      }
-		    },
-
-		    afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex){
-            var loadedSlide = $(this);
-
-            //first slide of the second section
-            if(index == 2 && slideIndex == 0){
-            }
-
-            //second slide of the second section (supposing #secondSlide is the
-            //anchor for the second slide
-            if(index == 2 && slideIndex == 'secondSlide'){
-                alert("Second slide loaded");
-            }
-        }
-
-		});
-		$.fn.fullpage.reBuild();
-	});
+});
 
 </script>
 </html>

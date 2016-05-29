@@ -54,3 +54,18 @@
 		font-weight: 500;
 		font-style: italic;
 	}
+	body, html {
+		font-family: museo;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.anim {
+		-o-transition:.2s;
+		-ms-transition:.2s;
+		-moz-transition:.2s;
+		-webkit-transition:.2s;
+		transition:.2s;
+	}
+
+	
