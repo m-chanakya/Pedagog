@@ -71,7 +71,50 @@
 .container {
 			margin-top: 100px;
 			padding-left: 10%;
-			padding-right: 10%;
+			padding-right: 35%;
+		}
+		.rightsidebar {
+			padding-top: 80px;
+			position: fixed;
+			right: 0px;
+			top: 0px;
+			width: 25%;
+			background: #01579B;
+			height: 100vh; /* FIX THIS */
+			box-shadow: inset 0px 0px 10px black;
+		}
+		.rightsidebar .course_details {
+			/*background-color: rgba(0,0,0,0.);*/
+			color: white;
+			width: 100%;
+			display: block;
+			padding: 20px;
+		}
+		.bottom_right {
+			color: white;
+			position: fixed;
+			bottom: 0px;
+			padding-left: 20px;
+			padding-right: 20px;
+			box-sizing: border-box;
+			height: auto;
+			width: 100%;
+			display: block;
+		}
+		.bottom_right ul {
+			margin-top: 20px;
+		}
+		.bottom_right ul li {
+			padding: 10px;
+			font-size: 0.9em;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		.bottom_right ul li:hover {
+			background-color: rgba(255,255,255,0.2);
+			box-shadow: inset 0 0 1px black;
+			cursor: pointer;
+			/*box-shadow: inset 0 0 1px white;*/
 		}
 		.container h1 {
 			font-size: 3em;
@@ -108,13 +151,31 @@
 		.container ul li {
 			padding: 15px;
 			border-left: 4px solid #01579B;
-			cursor: pointer;
 			margin-bottom: 5px;
 		}
-		.container ul li:hover {
+		.container ul li.answer {
+			margin-top: 60px;
+			margin-bottom: 60px;
+			/*border: 4px solid #01579B;*/
+			padding: 20px;
+			/*border-left: 0px;*/
+			/*border-radius: 10px;*/
+		}
+		.container ul li.answer .li_desc {
+			margin-top: 30px;
+		}
+		.container ul .selectable:hover {
 			background: #01579B;
 			color: white;
-			border-radius: 10px;
+			cursor: pointer;
+			box-shadow: inset 0 0 3px black;
+			/*border-radius: 10px;*/
+		}
+		.container ul .selectable:hover .li_desc {
+			color: rgba(255,255,255,0.7);
+		}
+		.container p.li_title {
+			font-size: 1em;
 		}
 		.container .li_title {
 			display: block;
@@ -127,18 +188,9 @@
 			text-align: justify;
 			font-size: 0.9em;
 			margin-top: 5px;
-			/*color: rgba(0,0,0,0.5);*/
+			color: rgba(0,0,0,0.5);
 		}
-		.leftsidebar {
-			padding-top: 80px;
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 20%;
-			background: #01579B;
-			height: 100%;
-			display: none;
-		}
+		
 		#searchbox {
 			background-color: rgba(0,0,0,0.3);
 			float: right;
@@ -189,6 +241,7 @@
 		.btn {
 			background-color: rgba(255,255,255,0.1);
 			border-radius: 10px;
+
 		}
 		.btn:hover {
 			background-color: rgba(255,255,255,0.3);
