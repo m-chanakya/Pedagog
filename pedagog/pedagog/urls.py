@@ -16,11 +16,22 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from user.views import *
+from user import views as uviews
+from forums import views as fviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+<<<<<<< HEAD
     url(r'^$', index, name="index"),
     url(r'^accounts/login$', login.as_view(), name="login"),
     url(r'^accounts/signup$', login.as_view(), name="signup"),
+=======
+    url(r'^$', uviews.home, name="home"),
+    url(r'^account/login$', uviews.login.as_view(), name="login"),
+    url(r'^account/signup$', uviews.login.as_view(), name="signup"),
+    url(r'^forum/topics$',  fviews.topics, name="forum_topics"),
+    url(r'^forum/threads$',  fviews.threads, name="forum_threads"),
+    url(r'^forum/questions$',  fviews.questions, name="forum_questions"),
+    url(r'^forum/question$',  fviews.question, name="forum_question")
+>>>>>>> 67593ee3bf924361145b884a8ede5e22c267edb7
 ]

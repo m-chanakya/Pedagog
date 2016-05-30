@@ -5,10 +5,11 @@
 	<title>
 		Pedagog: Learn advanced courses online
 	</title>
+	<link rel="stylesheet" href="{% static 'css/fullpage.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
-	<link rel="stylesheet" href="{% static 'css/fullpage.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/fawesome.css' %}" />
 	<style>
 	
 		body, html {
@@ -33,13 +34,18 @@
 			padding-left: 10%;
 			padding-right: 10%;
 			padding-top: 20px;
+			padding-bottom: 20px;
+			height: 80px;
 			box-sizing: border-box;
+			background: #01579B;
+
 		}
 		.logo_hero {
 			font-size: 2.5em;
 			font-weight: 700;
 			color: white;
 			display: none;
+			float: left;
 		}
 		body {
 		}
@@ -52,7 +58,8 @@
 			color: white;
 			float: right;
 			/*margin-right: 20%;*/
-			margin: 0 auto;
+			/*margin: 0 auto;*/
+
 		}
 		.nav li {
 			list-style-type: none;
@@ -90,6 +97,7 @@
 .btn {
 	background-color: rgba(255,255,255,0.1);
 	border-radius: 10px;
+			color: rgba(255,255,255,0.8);
 
 }
 .btn:hover {
@@ -118,37 +126,62 @@
 	padding-bottom: 10px;
 	cursor: pointer;
 }
+a.norule {
+	color: white;
+	text-decoration: none;
+}
+#down_arrow {
+	position: absolute;
+	bottom: 30px;
+	left: 49%;
+	right: 0;
+}
+.section {
+	padding-left: 10%;
+	padding-right: 10%;
+}
 	</style>
 </head>
 <body>
 	<div class="header animated fadeIn clearfix">
-		<div class="logo_hero"><h1>pedagog</h1></div>
+		<a href="#home"><div class="logo_hero"><h1>pedagog</h1></div></a>
 		<ul class="nav">
-			<li class="anim">What</li>
-			<li class="anim">Why</li>
-			<li class="anim">How</li>
-			<li class="anim">Courses</li>
+			<a href="#what"><li class="anim">What</li></a>
+			<a href="#why"><li class="anim">Why</li></a>
+			<a href="#how"><li class="anim">How</li></a>
+			<a href="#courses"><li class="anim">Courses</li></a>
 			<a href="{% url 'login' %}"><li class="anim btn">Login</li></a>
 		</ul>
 	</div>
-	
 	<div id="fullPage">
-    <section class="vertical-scrolling" id="section1">
+	<div class="section" id="section0">
+		Getting Started
+    </div>
+    <div class="section active" id="section1">
     	<span id="logo_central" class="animated bounceIn">pedagog</span>
-    	<span class="subtext animated fadeIn">Learning. Made easier. <br /> <br /><br /><br /> <span class="anim btn" id="begin">Get started</span></span>
-    </section>
-    <section class="vertical-scrolling" id="section2">
-		Hello
-    </section>
-    <section class="vertical-scrolling" id="section3">
-		Hello
-    </section>
+    	<span class="subtext animated fadeIn">Learning. Made easier. <br /> <br /><br /><br /> 
+    	<a class="norule" href="#signup"><span class="anim btn" id="begin">Sign up</span></a></span>
+    	<a href="#what" class="norule"><i class="fa fa-chevron-down" aria-hidden="true" id="down_arrow"></i></a>
+    </div>
+    <div class="section" id="section2">
+		<h1>What is pedagog?</h1>
+    </div>
+    <div class="section" id="section3">
+		Why
+    </div>
+    <div class="section" id="section4">
+		How
+    </div>
+    <div class="section" id="section5">
+		Courses
+    </div>
 </div>
 
 </body>
 
 <script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/fullpage.js' %}"></script>
+<script src="{% static 'js/endpoints.js' %}"></script>
 <!-- <script src="./js/jqueryui.js"></script> -->
 
 <script>
@@ -156,20 +189,45 @@ $(document).ready(function() {
 		 // variables
 		  // var $header_top = $('.header');
 
-		$('#fullPage').fullpage({ 
-			sectionSelector: '.vertical-scrolling',
+		$('#fullPage').fullpage({
 		    slideSelector: '.horizontal-scrolling',
 		    controlArrows: false, 
 		    scrollBar: true, 
-		    // navigation: true, 
 		    slidesNavigation: true,
-		    // anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection', 'sixthSection', 'seventhSection', 'eighthSection', 'ninthSection', 'tenthSection'],
-		    autoScrolling: false,
+		    anchors: ['signup', 'home', 'what', 'why', 'how', 'courses'],
 
-		    
+		    afterLoad: function(anchorLink, index) {
+		      window.lastSlideLoaded = index;
+		      if (index == 2) {
+		      	$('.logo_hero').fadeOut();
+		      }
+		      else {
+		      	$('.logo_hero').fadeIn();
+		      }
+		    },
+
+		    onLeave: function(index, nextIndex, direction) {
+		      if(index == 5) {
+		        // $('#fp-nav').show();
+		      }
+		    },
+
+		    afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex){
+            var loadedSlide = $(this);
+
+            //first slide of the second section
+            if(index == 2 && slideIndex == 0){
+            }
+
+            //second slide of the second section (supposing #secondSlide is the
+            //anchor for the second slide
+            if(index == 2 && slideIndex == 'secondSlide'){
+                alert("Second slide loaded");
+            }
+        }
 
 		});
-		// $.fn.fullpage.reBuild();
+		$.fn.fullpage.reBuild();
 	});
 
 </script>

@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from user.models import *
 
 class Forum(models.Model):
 	title = models.CharField(max_length = 200)
@@ -54,8 +55,8 @@ class QuestionAbuse(models.Model):
 
 
 class QuestionDuplicate(models.Model):
-	src_ques = models.ForeignKey(Question)
-	tgt_ques = models.ForeignKey(Question)
+	src_ques = models.ForeignKey(Question, related_name = "source")
+	tgt_ques = models.ForeignKey(Question, related_name = "target")
 	created = models.DateTimeField(auto_now_add = True)
 	user = models.ForeignKey(User, related_name = "dup_marked_questions")
 
