@@ -3,10 +3,11 @@ from django.views.generic import View
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 
-def home(request):
+def index(request):
 	template_name = 'accounts/index.html'
 	context = RequestContext(request, {'user': request.user, 'request': request})
 	return render_to_response(template_name, context_instance=context)
+
 
 class login(View):
 	template_name = 'accounts/login.html'
@@ -42,6 +43,7 @@ class login(View):
 		if request.user.is_authenticated():
 			return redirect('home')
 		return render_to_response(self.template_name, context_instance=RequestContext(request))
+
 
 class signup(View):
 	def post(self, request, *args, **kwargs):
