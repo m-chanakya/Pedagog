@@ -21,10 +21,7 @@ from forums import views as fviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
-    url(r'^$', index, name="index"),
-    url(r'^accounts/login$', login.as_view(), name="login"),
-    url(r'^accounts/signup$', login.as_view(), name="signup"),
+    url(r'^$', uviews.index, name="index"),
     url(r'^account/login$', uviews.login.as_view(), name="login"),
     url(r'^account/signup$', uviews.login.as_view(), name="signup"),
     url(r'^forum/topics$',  fviews.topics, name="forum_topics"),
