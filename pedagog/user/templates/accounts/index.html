@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/fawesome.css' %}" />
 	<style>
 	
 		body, html {
@@ -128,6 +129,12 @@ a.norule {
 	color: white;
 	text-decoration: none;
 }
+#down_arrow {
+	position: absolute;
+	bottom: 30px;
+	left: 49%;
+	right: 0;
+}
 	</style>
 </head>
 <body>
@@ -149,6 +156,7 @@ a.norule {
     	<span id="logo_central" class="animated bounceIn">pedagog</span>
     	<span class="subtext animated fadeIn">Learning. Made easier. <br /> <br /><br /><br /> 
     	<a class="norule" href="#signup"><span class="anim btn" id="begin">Get started</span></a></span>
+    	<a href="#what" class="norule"><i class="fa fa-chevron-down" aria-hidden="true" id="down_arrow"></i></a>
     </div>
     <div class="section" id="section2">
 		What

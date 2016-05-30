@@ -68,4 +68,129 @@
 		transition:.2s;
 	}
 
+.container {
+			margin-top: 100px;
+			padding-left: 10%;
+			padding-right: 10%;
+		}
+		.container h1 {
+			font-size: 3em;
+			margin-bottom: 50px;
+
+			font-weight: 700;
+		}
+		.container h2 {
+			font-size: 2em;
+			margin-bottom: 40px;
+
+			font-weight: 700;
+		}
+		.container h3 {
+			font-size: 1.5em;
+			margin-bottom: 30px;
+
+		}
+		.container p {
+			font-size: 1.1em;
+			margin-bottom: 10px;
+
+			font-weight: 300;
+			line-height: 1.2em;
+			text-align: justify;
+			/*letter-spacing: 0px;*/
+		}
+		.container a {
+			color: #01579B;
+		}
+		.container ul {
+
+		}
+		.container ul li {
+			padding: 15px;
+			border-left: 4px solid #01579B;
+			cursor: pointer;
+			margin-bottom: 5px;
+		}
+		.container ul li:hover {
+			background: #01579B;
+			color: white;
+			border-radius: 10px;
+		}
+		.container .li_title {
+			display: block;
+			font-size: 1.2em;
+			font-weight: 300;
+		}
+		.container .li_desc {
+			display: block;
+			font-weight: 300;
+			text-align: justify;
+			font-size: 0.9em;
+			margin-top: 5px;
+			/*color: rgba(0,0,0,0.5);*/
+		}
+		.leftsidebar {
+			padding-top: 80px;
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 20%;
+			background: #01579B;
+			height: 100%;
+			display: none;
+		}
+		#searchbox {
+			background-color: rgba(0,0,0,0.3);
+			float: right;
+			border-radius: 10px;
+			width: 20%;
+			padding-left: 10px;
+			color: rgba(255,255,255,0.7);
+		}
+		#searchbar {
+			border: 0px;
+			background-color: transparent;
+			outline-width: 0px;
+			font-size: 1em;
+			font-family: museo;
+			padding-left: 5px;
+			color: white;
+			padding-right: 10px;
+			padding-top: 5px;
+			width: 90%;
+			padding-bottom: 5px;
+			margin-left: 0px;
+			display: inline-block;
+		}
+		.fa {
+			display: inline-block;
+		}
+		.header {
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			z-index: 100;
+			width: 100%;
+			padding-left: 10%;
+			padding-right: 10%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			height: 60px;
+			box-sizing: border-box;
+			background: #01579B;
+
+		}
+		.logo_hero {
+			font-size: 2em;
+			font-weight: 700;
+			color: white;
+			float: left;
+		}
+		.btn {
+			background-color: rgba(255,255,255,0.1);
+			border-radius: 10px;
+		}
+		.btn:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
 	

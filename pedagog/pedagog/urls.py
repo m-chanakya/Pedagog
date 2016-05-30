@@ -24,5 +24,8 @@ urlpatterns = [
     url(r'^$', uviews.home, name="home"),
     url(r'^account/login$', uviews.login.as_view(), name="login"),
     url(r'^account/signup$', uviews.login.as_view(), name="signup"),
-    url(r'^forum$',  fviews.home, name="forum_home")
+    url(r'^forum/topics$',  fviews.topics, name="forum_topics"),
+    url(r'^forum/threads$',  fviews.threads, name="forum_threads"),
+    url(r'^forum/questions$',  fviews.questions, name="forum_questions"),
+    url(r'^forum/question$',  fviews.question, name="forum_question")
 ]
